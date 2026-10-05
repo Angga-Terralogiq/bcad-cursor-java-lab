@@ -64,3 +64,5 @@ My no-Cursor estimate: ________ hours
 4. Run `mvn verify` and `scripts/javax-count.sh` after every batch.
 5. If a batch goes wrong, restore the checkpoint from before it and retry with a better prompt. Rolling back is cheaper than repairing.
 6. Save the final plan. It is the start of a reusable plan for your own services.
+
+Rules in `.cursor/rules/` are shared guardrails (the Jakarta rule applies when Java or build files are in scope; the no-secrets rule always applies). The Track A skill at `.cursor/skills/javax-to-jakarta/SKILL.md` is the migration procedure you invoke. In the live demo, change one line in the Jakarta rule, then re-run the same prompt.

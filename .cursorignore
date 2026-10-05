@@ -1,0 +1,11 @@
+.env
+.env.*
+**/secrets/**
+**/*.pem
+**/*.key
+**/target/**
+.idea/
+*.iml
+.vscode/
+**/*.{sql,dump,bak}
+**/fixtures/**
