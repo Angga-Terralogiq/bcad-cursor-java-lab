@@ -1,0 +1,13 @@
+---
+description: Jakarta EE and Spring Boot 3 conventions for the BCAD ledger lab
+globs: ["**/*.java","**/pom.xml","**/*.{xml,yml,yaml}"]
+alwaysApply: false
+---
+# Jakarta migration conventions
+
+- Prefer `jakarta.*` for EE APIs (servlet, persistence, validation, xml.bind). Do not introduce new `javax.*` EE imports.
+- Leave JDK-only `javax.*` alone (e.g. crypto). Match `scripts/javax-count.sh`.
+- Target stack: Java 21, Spring Boot 3.5, Tomcat 10.1, JUnit 5.
+- Migrate in small batches. After each batch run `mvn verify` and `scripts/javax-count.sh`.
+- Keep behaviour identical. No unrelated refactors.
+- Plan the full migration first; execute one approved batch at a time.
